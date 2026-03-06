@@ -14,7 +14,7 @@
     <h2>CRUD CON PHP Y POO EN MVC</h2>
     <nav>
         <ul>
-            <li><a href="index.php">Inicio</a></li>
+            <li><a href="?cargar=inicio">Inicio</a></li>
             <li><a href="?cargar=crear">Registrar</a></li>
         </ul>
     </nav>

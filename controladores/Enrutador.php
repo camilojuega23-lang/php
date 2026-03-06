@@ -17,6 +17,9 @@ class Enrutador
             case 'consultar':
                 include_once("vistas/consultar.php");
                 break;
+            case 'inicio':
+                include_once("vistas/inicio.php");
+                break;
             default:
                 include_once("vistas/error404.php");
         }
