@@ -1,6 +1,6 @@
 <?php
 
-include ("controladores/Usuarios.php");
+include_once ("modelos/Usuarios.php");
 class ControladorUsuarios
 {
     private $usuario;

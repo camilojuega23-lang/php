@@ -27,4 +27,4 @@ class Usuarios
 }
 
 $usuarios = new Usuarios();
-$usuarios->listar();
+//$usuarios->listar();

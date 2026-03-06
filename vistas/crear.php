@@ -1,1 +1,1 @@
-<h1>crear vista</h1>
+<h1>MODULO CREAR</h1>
