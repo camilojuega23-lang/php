@@ -11,6 +11,7 @@ class Usuarios
     private $celular;
     private $usuario;
     private $clave;
+    
     private $con;
 
     //metodo constructor
@@ -20,9 +21,9 @@ class Usuarios
     }
 
     public function listar(){
-        $query = "SELECT * FROM usuarios";
-        $resultado = $this->con->consultaRetorno($query);
-        echo $resultado;
+        $sql = "SELECT * FROM usuarios";
+        $resultado = $this->con->consultaRetorno($sql);
+        return $resultado;
     }
 }
 
