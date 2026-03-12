@@ -25,7 +25,33 @@ class Usuarios
         $resultado = $this->con->consultaRetorno($sql);
         return $resultado;
     }
+
+    //Funcion que reemplaza todos los getter y setters
+    public function set($atributo,$valor){
+        $this->$atributo = $valor;
+
+    }
+
+    public function crear(){
+        //query
+        $sql2 = "SELECT * FROM usuarios WHERE cedula='$this->cedula'";
+
+        $resultado = $this->con->consultaRetorno($sql2);
+
+        $filas = mysqli_num_rows($resultado);
+
+        if($filas == 0)
+        {
+            $sql = "INSERT INTO usuarios (cedula,nombre,apellidos,usuario,clave) VALUES ('$this->cedula','$this->nombre', '$this->apellidos','$this->usuario','$this->clave')";
+            $this->con->consultaSimple($sql);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
-$usuarios = new Usuarios();
+//$usuarios = new Usuarios();
 //$usuarios->listar();
