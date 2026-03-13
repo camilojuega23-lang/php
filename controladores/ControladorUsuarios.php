@@ -23,6 +23,15 @@ class ControladorUsuarios
 
         $resultado = $this->usuario->crear();
         return $resultado;
+    }
 
+    public function consultar($id){
+        $this->usuario->set("id",$id);
+        return $this->usuario->consultar();
+    }
+
+    public function eliminar($id){
+        $this->usuario->set("id",$id);
+        $this->usuario->eliminar();
     }
 }

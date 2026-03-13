@@ -24,8 +24,6 @@
                 //echo se ve desde el navegador, no se ve en la consola de php
                 echo "Error al conectar a la base de datos: $this->db";
                 
-            }else{
-                echo "Conexion exitosa a la base de datos: $this->db";
             }
 
         }

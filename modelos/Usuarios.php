@@ -51,6 +51,30 @@ class Usuarios
             return false;
         }
     }
+
+    //funcion para consultar un registro segun su id
+    public function consultar(){
+        $sql = "SELECT * FROM usuarios WHERE id_usuario = '$this->id'";
+
+        $resultado = $this->con->consultaRetorno($sql);
+
+        $registro = mysqli_fetch_assoc($resultado);
+
+//        $this->id = $registro["id_usuario"];
+//        $this->nombre = $registro["nombre"];
+//        $this->apellidos = $registro["apellidos"];
+//        $this->usuario = $registro["usuario"];
+//        $this->clave = $registro["clave"];
+//        $this->cedula = $registro["cedula"];
+
+        return $registro;
+    }
+
+    public function eliminar(){
+        $sql = "DELETE FROM usuarios WHERE id_usuario = '$this->id'";
+
+        $this->con->consultaSimple($sql);
+    }
 }
 
 //$usuarios = new Usuarios();
