@@ -1,9 +1,11 @@
 <h1>MODULO EDITAR</h1>
 <?php
     $controlador = new ControladorUsuarios();
+    //consulta el registro segun su id para mostrarlo en el formulario de editar.php
     if (isset($_GET["id"])){
         $registro = $controlador->consultar($_GET["id"]);
     }
+    //si se presiona el boton de editar, se ejecuta el metodo editar del controlador para actualizar el registro en la base de datos
     if (isset($_POST["Editar"])){
         $controlador->editar($_GET["id"], $_POST["nombre"], $_POST["apellidos"], $_POST["usuario"], $_POST["clave"]);
         header("location:index.php");
@@ -22,6 +24,7 @@
         <tbody>
         <tr>
             <td>
+                <!-- muestra el valor del registro en el formulario de editar.php para que el usuario pueda modificarlo y luego enviarlo al controlador para actualizarlo en la base de datos -->
                 <input type="text" name="nombre" value="<?php echo $registro['nombre']; ?>">
             </td>
             <td>
