@@ -75,6 +75,14 @@ class Usuarios
 
         $this->con->consultaSimple($sql);
     }
+
+    //funcion para editar un usuario
+    public function editar()
+    {
+        //query para actualizar el registro
+        $sql = "UPDATE usuarios SET nombre='$this->nombre', apellidos='$this->apellidos', usuario='$this->usuario', clave='$this->clave' WHERE id_usuario = '$this->id'";
+        $this->con->consultaSimple($sql);
+    }
 }
 
 //$usuarios = new Usuarios();
