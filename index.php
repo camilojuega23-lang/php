@@ -19,9 +19,9 @@
         </ul>
     </nav>
     <?php
-        if (!isset($_GET["cargar"])){
-            $_GET["cargar"] = "";
-        }
+            if (!isset($_GET["cargar"])){
+                $_GET["cargar"] = "";
+            }
         $enrutador = new Enrutador();
         if($enrutador->validarVista($_GET['cargar'])){
             $enrutador->cargarVista($_GET['cargar']);
