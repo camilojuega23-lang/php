@@ -42,7 +42,7 @@ class Usuarios
 
         if($filas == 0)
         {
-            $sql = "INSERT INTO usuarios (cedula,nombre,apellidos,usuario,clave) VALUES ('$this->cedula','$this->nombre', '$this->apellidos','$this->usuario','$this->clave')";
+            $sql = "INSERT INTO usuarios (cedula,nombre,apellidos,direccion,celular,usuario,clave) VALUES ('$this->cedula','$this->nombre', '$this->apellidos','$this->direccion','$this->celular','$this->usuario','$this->clave')";
             $this->con->consultaSimple($sql);
             return true;
         }
@@ -80,7 +80,7 @@ class Usuarios
     public function editar()
     {
         //query para actualizar el registro
-        $sql = "UPDATE usuarios SET nombre='$this->nombre', apellidos='$this->apellidos', usuario='$this->usuario', clave='$this->clave' WHERE id_usuario = '$this->id'";
+        $sql = "UPDATE usuarios SET nombre='$this->nombre', apellidos='$this->apellidos', direccion='$this->direccion', celular='$this->celular',usuario='$this->usuario', clave='$this->clave' WHERE id_usuario = '$this->id'";
         $this->con->consultaSimple($sql);
     }
 }

@@ -7,7 +7,7 @@
     }
     //si se presiona el boton de editar, se ejecuta el metodo editar del controlador para actualizar el registro en la base de datos
     if (isset($_POST["Editar"])){
-        $controlador->editar($_GET["id"], $_POST["nombre"], $_POST["apellidos"], $_POST["usuario"], $_POST["clave"]);
+        $controlador->editar($_GET["id"], $_POST["nombre"], $_POST["apellidos"], $_POST["direccion"], $_POST["celular"], $_POST["usuario"], $_POST["clave"]);
         header("location:index.php");
     }
 ?>
@@ -16,6 +16,8 @@
         <thead>
         <th>Nombre</th>
         <th>Apellidos</th>
+        <th>Direccion</th>
+        <th>Celular</th>
         <th>Cedula</th>
         <th>Usuario</th>
         <th>Clave</th>
@@ -29,6 +31,12 @@
             </td>
             <td>
                 <input type="text" name="apellidos" value="<?php echo $registro['apellidos']; ?>">
+            </td>
+            <td>
+                <input type="text" name="direccion" value="<?php echo $registro['direccion']; ?>">
+            </td>
+            <td>
+                <input type="text" name="celular" value="<?php echo $registro['celular']; ?>">
             </td>
             <td><?php echo $registro['cedula']; ?></td>
             <td>

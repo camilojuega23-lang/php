@@ -9,7 +9,13 @@
     <label for="">Apellido</label><br>
     <input type="text" name="apellidos" required><br><br>
 
-    <label for="">Usuairo</label><br>
+    <label for="">Direccion</label><br>
+    <input type="text" name="direccion" required><br><br>
+
+    <label for="">Celular</label><br>
+    <input type="text" name="celular" required><br><br>
+
+    <label for="">Usuario</label><br>
     <input type="text" name="usuario" required><br><br>
 
     <label for="">Clave</label><br>
@@ -23,7 +29,7 @@
     if(isset($_POST['enviar'])){
 
         //metodo para crear el usuario
-        $resultado = $controlador->crear($_POST['cedula'],$_POST['nombre'],$_POST['apellidos'],$_POST['usuario'],$_POST['clave']);
+        $resultado = $controlador->crear($_POST['cedula'],$_POST['nombre'],$_POST['apellidos'],$_POST['direccion'],$_POST['celular'],$_POST['usuario'],$_POST['clave']);
 
         if($resultado){
             echo "Registro agregado con exito";

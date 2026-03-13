@@ -16,6 +16,8 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Apellidos</th>
+            <th>Direccion</th>
+            <th>Celular</th>
             <th>Cedula</th>
             <th>Usuario</th>
             <th>Clave</th>
@@ -26,6 +28,8 @@
                 <td><?php echo $registro['id_usuario']?></td>
                 <td><?php echo $registro['nombre']?></td>
                 <td><?php echo $registro['apellidos']?></td>
+                <td><?php echo $registro['direccion']?></td>
+                <td><?php echo $registro['celular']?></td>
                 <td><?php echo $registro['cedula']?></td>
                 <td><?php echo $registro['usuario']?></td>
                 <td><?php echo $registro['clave']?></td>

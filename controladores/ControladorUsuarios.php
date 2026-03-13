@@ -14,10 +14,12 @@ class ControladorUsuarios
     }
 
     //nuevo metodo para la creacion del registro del html hacia la base de datos
-    public function crear($cedula,$nombre,$apellidos,$usuario,$clave){
-        $this->usuario->set("cedula",$cedula);  
+    public function crear($cedula,$nombre,$apellidos,$direccion,$celular,$usuario,$clave){
+        $this->usuario->set("cedula",$cedula);
         $this->usuario->set("nombre",$nombre);
         $this->usuario->set("apellidos",$apellidos);
+        $this->usuario->set("direccion",$direccion);
+        $this->usuario->set("celular",$celular);
         $this->usuario->set("usuario",$usuario);
         $this->usuario->set("clave",$clave);
 
@@ -36,10 +38,12 @@ class ControladorUsuarios
     }
 
     //metodo para editar un usuario, recibe los datos del formulario de editar.php y los envia al modelo para actualizar el registro
-    public function editar($id, $nombre, $apellidos, $usuario, $clave){
+    public function editar($id, $nombre, $apellidos, $direccion, $celular, $usuario, $clave){
         $this->usuario->set("id",$id);
         $this->usuario->set("nombre",$nombre);
         $this->usuario->set("apellidos",$apellidos);
+        $this->usuario->set("direccion",$direccion);
+        $this->usuario->set("celular",$celular);
         $this->usuario->set("usuario",$usuario);
         $this->usuario->set("clave",$clave);
         $this->usuario->editar();

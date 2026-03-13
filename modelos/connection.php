@@ -31,7 +31,11 @@
         public function consultaSimple($sql)
         {
             //ejecutar la consulta sql
-            mysqli_query($this->con, $sql);
+            $result = mysqli_query($this->con, $sql);
+            if (!$result) {
+                die("Error en consulta: " . mysqli_error($this->con));
+            }
+            return $result;
         }
 
         public function consultaRetorno($sql)
