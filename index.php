@@ -1,6 +1,7 @@
 <?php
     include_once ("controladores/controladorusuarios.php");
     include_once ("controladores/enrutador.php");
+    include_once ("controladores/controladorproducto.php");
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +17,8 @@
         <ul>
             <li><a href="?cargar=inicio">Inicio</a></li>
             <li><a href="?cargar=crear">Registrar</a></li>
+            <li><a href="?cargar=inicioProducto">Inicio Producto</a></li>
+            <li><a href="?cargar=crearProducto">Registrar Producto</a></li>
         </ul>
     </nav>
     <?php
