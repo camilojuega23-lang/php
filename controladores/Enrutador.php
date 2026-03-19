@@ -20,6 +20,21 @@ class Enrutador
             case 'inicio':
                 include_once("vistas/inicio.php");
                 break;
+            case 'crearProducto':
+                include_once("vistas/crearProducto.php");
+                break;
+            case 'editarProducto':
+                include_once("vistas/editarProducto.php");
+                break;
+            case 'eliminarProducto':
+                include_once("vistas/eliminarProducto.php");
+                break;
+            case 'inicioProducto':
+                include_once("vistas/inicioProducto.php");
+                break;
+            case 'consultarProducto':
+                include_once("vistas/consultarProducto.php");
+                break;
             default:
                 include_once("vistas/error404.php");
         }
