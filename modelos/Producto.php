@@ -25,11 +25,12 @@ class Producto
     public function listarProducto()
     {
         $query = "SELECT * FROM productos";
-        return $this->con->consultaRetorno($query);
+        $resultado = $this->con->consultaRetorno($query);
+        return $resultado;
     }
     public function consultarProducto()
     {
-        $query = "SELECT * FROM productos WHERE id_producto = $this->id_producto";
+        $query = "SELECT * FROM productos WHERE id_producto = '$this->id_producto'";
         $resultado = $this->con->consultaRetorno($query);
         $registro = mysqli_fetch_array($resultado);
 
@@ -38,12 +39,12 @@ class Producto
 
     public function crearProducto()
     {
-        $query = "SELECT * FROM productos WHERE id_producto = $this->id_producto";
+        $query = "SELECT * FROM productos WHERE nombre = '$this->nombre'";
         $resultado = $this->con->consultaRetorno($query);
-        $filas = mysqli_fetch_array($resultado);
+        $filas = mysqli_num_rows($resultado);
         if($filas == 0){
             $query2 = "INSERT INTO productos (nombre,descripcion,precio,stock) VALUES ('$this->nombre','$this->descripcion','$this->precio','$this->stock')";
-            $resultado2 = $this->con->consultaSimple($query2);
+            $this->con->consultaSimple($query2);
             return true;
         }
         else{
@@ -53,13 +54,13 @@ class Producto
 
     public function editarProducto()
     {
-        $query = "UPDATE produtos SET nombre='$this->nombre', descripcion = '$this->descripcion', precio = '$this->precio', stock = '$this->stock' WHERE id_producto = $this->id_producto";
+        $query = "UPDATE productos SET nombre='$this->nombre', descripcion = '$this->descripcion', precio = '$this->precio', stock = '$this->stock' WHERE id_producto = '$this->id_producto'";
         $this->con->consultaSimple($query);
     }
 
     public function eliminarProducto()
     {
-        $query = "DELETE FROM productos WHERE id_prodcuto = $this->id_producto";
+        $query = "DELETE FROM productos WHERE id_producto = '$this->id_producto'";
         $this->con->consultaSimple($query);
     }
 }
