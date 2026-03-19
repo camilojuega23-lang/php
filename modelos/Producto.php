@@ -22,7 +22,7 @@ class Producto
         $this->$atributo = $valor;
     }
 
-    public function listar()
+    public function listarProducto()
     {
         $query = "SELECT * FROM productos";
         return $this->con->consultaRetorno($query);
