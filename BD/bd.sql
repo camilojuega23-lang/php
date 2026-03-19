@@ -61,3 +61,18 @@ VALUES
 ('10000048','Paola','Aristizabal','Calle 48','3000000048','paola48','clave48'),
 ('10000049','Jonathan','Bedoya','Calle 49','3000000049','jon49','clave49'),
 ('10000050','Mariana','Franco','Calle 50','3000000050','mariana50','clave50');
+
+CREATE TABLE productos (
+    id          INT PRIMARY KEY AUTO_INCREMENT,
+    nombre      VARCHAR(100),
+    descripcion VARCHAR(255),
+    precio      INT,
+    stock       INT
+);
+
+INSERT INTO productos (nombre, descripcion, precio, stock) VALUES
+('Camisa',       'Camisa de algodón talla M',     45000, 20),
+('Pantalón',     'Pantalón jeans azul talla 32',  89000, 15),
+('Zapatos',      'Zapatos de cuero negro',        150000, 10),
+('Camiseta',     'Camiseta deportiva talla L',    35000, 30),
+('Chaqueta',     'Chaqueta impermeable negra',    200000, 8);
