@@ -36,12 +36,13 @@ class ControladorProducto
 
     public function editarProducto($id_producto,$nombre,$descripcion,$precio,$stock)
     {
+        $this->producto->setProducto("id_producto", $id_producto);
         $this->producto->setProducto("nombre", $nombre);
         $this->producto->setProducto("descripcion", $descripcion);
         $this->producto->setProducto("precio", $precio);
         $this->producto->setProducto("stock", $stock);
 
-        return $this->producto->crearProducto();
+        return $this->producto->editarProducto();
     }
 
     public function eliminarProducto($id_producto)
